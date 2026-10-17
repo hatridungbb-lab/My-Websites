@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"><title>Coban (Cobalt) - Co (Z=27)</title>
+<style>
+:root{--primary:#0052d4;--sec:#6fb1fc;--bg:#050a1a;--card:rgba(12,25,60,0.75);--border:rgba(111,177,252,0.35);}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',sans-serif;}
+body{background:radial-gradient(circle at 70% 30%,#0f2252,var(--bg));color:#f1f5f9;padding:25px;min-height:100vh;}
+.container{max-width:1100px;margin:auto;display:flex;flex-direction:column;gap:25px;}
+.header{text-align:center;padding:25px;background:var(--card);border:1px solid var(--border);border-radius:20px;box-shadow:0 0 30px rgba(0,82,212,0.3);}
+.badge{padding:6px 16px;border-radius:20px;background:linear-gradient(90deg,var(--primary),var(--sec));color:#fff;font-weight:900;}
+h1{font-size:2.6rem;margin-top:10px;text-shadow:0 0 20px var(--sec);color:#c1dbfe;}
+.grid-top{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media(max-width:768px){.grid-top{grid-template-columns:1fr;}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:22px;}
+.card h2{color:var(--sec);margin-bottom:15px;}
+canvas{width:100%;height:300px;background:#030713;border-radius:12px;border:1px solid rgba(255,255,255,0.08);}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media(max-width:768px){.gallery{grid-template-columns:1fr;}}
+.img-card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
+.img-card img{width:100%;height:220px;object-fit:cover;}
+.img-desc{padding:15px;}
+.img-desc h3{color:var(--sec);font-size:1.1rem;margin-bottom:6px;}
+.img-desc p{font-size:0.9rem;color:#cbd5e1;line-height:1.5;}
+.quiz-box{margin-bottom:15px;padding-bottom:15px;border-bottom:1px solid rgba(255,255,255,0.1);}
+.btn-opt{width:100%;text-align:left;padding:12px 16px;margin:6px 0;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.15);border-radius:10px;color:#fff;cursor:pointer;}
+.btn-opt:hover{background:rgba(111,177,252,0.15);border-color:var(--sec);}
+.correct{background:#10b981 !important;border-color:#34d399 !important;color:#fff;}
+.wrong{background:#ef4444 !important;border-color:#f87171 !important;color:#fff;}
+.exp{display:none;margin-top:8px;padding:10px;border-radius:8px;font-size:0.9rem;background:rgba(0,0,0,0.4);}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <span class="badge">NGUYÊN TỐ SẮC XANH HOÀNG GIA</span>
+        <h1>COBAN - COBALT (Co)</h1>
+        <p>Số hiệu nguyên tử: <strong>Z = 27</strong> | Khối lượng: <strong>59 amu</strong> | Chu kỳ 4 - Nhóm VIIIB</p>
+    </div>
+
+    <div class="grid-top">
+        <div class="card">
+            <h2>⚛️ Mô Hình Nguyên Tử Coban</h2>
+            <canvas id="atomCanvas" width="400" height="300"></canvas>
+        </div>
+        <div class="card">
+            <h2>📋 Thông Số Điện Tử</h2>
+            <ul style="line-height:2.2;list-style:none;">
+                <li>💎 <strong>Cấu hình e:</strong> [Ar] 3d⁷ 4s²</li>
+                <li>💎 <strong>Số e các lớp:</strong> K(2), L(8), M(15), N(2)</li>
+                <li>💎 <strong>Phân loại:</strong> Kim loại sắt từ màu trắng bạc pha ánh xanh xám</li>
+                <li>💎 <strong>Ứng dụng công nghệ cao:</strong> Thành phần quan trọng trong pin Lithium-ion</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2 style="color:var(--sec);">📸 Thí Nghiệm & Ứng Dụng Thực Tế</h2>
+    <div class="gallery">
+        <div class="img-card">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&auto=format&fit=crop" alt="Men gốm xanh coban">
+            <div class="img-desc">
+                <h3>Ứng Dụng: Men Gốm Sứ Xanh Coban & Pin Điện</h3>
+                <p>Từ ngàn năm trước, muối coban được dùng để tạo sắc xanh sâu thẳm cho đồ gốm quý. Ngày nay, oxit liti-coban là cực âm của pin điện thoại, xe điện.</p>
+            </div>
+        </div>
+        <div class="img-card">
+            <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&auto=format&fit=crop" alt="Thí nghiệm phức coban">
+            <div class="img-desc">
+                <h3>Thí Nghiệm: Đổi Màu Phức Chất Nhiệt Sắc</h3>
+                <p>Dung dịch CoCl₂ khi ngậm nước có dạng [Co(H₂O)₆]²⁺ màu hồng đào, nhưng khi thêm HCl đặc hoặc hơ nóng sẽ chuyển thành phức [CoCl₄]²⁻ màu xanh biển.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🧪 Câu Hỏi Tương Tác Coban</h2>
+        <div id="quiz"></div>
+    </div>
+</div>
+
+<script>
+const cvs = document.getElementById('atomCanvas'), ctx = cvs.getContext('2d');
+let ang = 0;
+function draw(){
+    ctx.clearRect(0,0,400,300);
+    const cx=200, cy=150;
+    ctx.beginPath(); ctx.arc(cx,cy,18,0,Math.PI*2);
+    ctx.fillStyle='#0052d4'; ctx.shadowBlur=20; ctx.shadowColor='#6fb1fc'; ctx.fill();
+    ctx.fillStyle='#fff'; ctx.font='bold 14px sans-serif'; ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText('27+',cx,cy);
+    ctx.shadowBlur=0;
+    const shells=[{r:35,e:2,s:0.04},{r:60,e:8,s:0.025},{r:90,e:15,s:0.015},{r:120,e:2,s:0.008}];
+    shells.forEach(sh=>{
+        ctx.beginPath(); ctx.arc(cx,cy,sh.r,0,Math.PI*2);
+        ctx.strokeStyle='rgba(111,177,252,0.3)'; ctx.stroke();
+        for(let i=0;i<sh.e;i++){
+            let ea = ang*sh.s + (i*Math.PI*2/sh.e);
+            let ex = cx + sh.r*Math.cos(ea), ey = cy + sh.r*Math.sin(ea);
+            ctx.beginPath(); ctx.arc(ex,ey,4.5,0,Math.PI*2);
+            ctx.fillStyle='#a5f3fc'; ctx.shadowBlur=8; ctx.shadowColor='#6fb1fc'; ctx.fill(); ctx.shadowBlur=0;
+        }
+    });
+    ang++; requestAnimationFrame(draw);
+}
+draw();
+
+const qs = [
+    {q:"Cấu hình electron nguyên tử Coban (Co, Z = 27) là:", a:["[Ar] 3d⁷ 4s²","[Ar] 3d⁸ 4s¹","[Ar] 4s² 4p⁷"], ans:0, exp:"Coban có Z=27, cấu hình viết theo lớp: [Ar] 3d⁷ 4s²."},
+    {q:"Coban thuộc nhóm nào và loại nguyên tố nào?", a:["Kim loại nhóm VIIIB","Phi kim nhóm VIIA","Khí hiếm nhóm VIIIA"], ans:0, exp:"Co là kim loại chuyển tiếp nhóm VIIIB, cùng nhóm với Fe và Ni."},
+    {q:"Đồng vị phóng xạ Coban-60 (Co-60) được ứng dụng chính trong lĩnh vực nào?", a:["Làm phân bón","Xạ trị ung thư và khử trùng y tế","Sản xuất giấy"], ans:1, exp:"Tia gamma từ Co-60 có năng lượng cao tiêu diệt tế bào ung thư và vi khuẩn."}
+];
+const qbox = document.getElementById('quiz');
+qs.forEach((item,i)=>{
+    let d=document.createElement('div'); d.className='quiz-box';
+    d.innerHTML=`<p style="font-weight:600;margin-bottom:8px;">Câu ${i+1}: ${item.q}</p><div id="opts-${i}"></div><div class="exp" id="exp-${i}"></div>`;
+    qbox.appendChild(d);
+    let optContainer=document.getElementById(`opts-${i}`);
+    item.a.forEach((optText,j)=>{
+        let b=document.createElement('button'); b.className='btn-opt'; b.innerText=optText;
+        b.onclick=()=>{
+            let all=optContainer.querySelectorAll('button'); all.forEach(x=>x.disabled=true);
+            let e=document.getElementById(`exp-${i}`); e.style.display='block';
+            if(j===item.ans){ b.classList.add('correct'); e.innerHTML='✅ <strong>Chính xác!</strong> '+item.exp; e.style.color='#10b981'; }
+            else{ b.classList.add('wrong'); all[item.ans].classList.add('correct'); e.innerHTML='❌ <strong>Chưa đúng!</strong> '+item.exp; e.style.color='#ef4444'; }
+        };
+        optContainer.appendChild(b);
+    });
+});
+</script>
+</body>
+</html>
